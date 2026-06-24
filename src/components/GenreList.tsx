@@ -24,7 +24,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   return (
     <>
       <Heading
-        fontSize="2xl"
+        fontSize="3xl"
         marginBottom={3}
         color="orange.500"
         fontFamily="'Pirata One', serif"
@@ -46,7 +46,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
                 textAlign="left"
                 fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
                 onClick={() => onSelectGenre(genre)}
-                fontSize="lg"
+                fontSize="xl"
                 color="orange.500"
                 variant="link"
                 fontFamily="'Pirata One', serif"
