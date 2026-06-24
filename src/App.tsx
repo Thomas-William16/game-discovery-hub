@@ -5,9 +5,10 @@ import GenreList from "./components/GenreList";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
-import { Platform } from "./hooks/useGames";
+import useGames, { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
+import HeroBanner from "./components/HeroBanner";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -18,6 +19,7 @@ export interface GameQuery {
 
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  const { data: featuredGames, isLoading: heroLoading } = useGames(gameQuery);
 
   return (
     <Grid
@@ -49,6 +51,7 @@ function App() {
       </Show>
       <GridItem area="main">
         <Box paddingLeft="10px">
+          <HeroBanner game={featuredGames[0] ?? null} isLoading={heroLoading} />
           <GameHeading gameQuery={gameQuery} />
           <Flex marginBottom={5}>
             <Box marginRight={5}>
