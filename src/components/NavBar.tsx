@@ -1,4 +1,4 @@
-import { HStack, Image } from "@chakra-ui/react";
+import { HStack, Image, Text } from "@chakra-ui/react";
 import logo from "../assets/NewLogo.webp";
 
 import ColorModeSwitch from "./ColorModeSwitch";
@@ -17,6 +17,15 @@ const NavBar = ({ onSearch }: Props) => {
         objectFit="contain"
         borderRadius="12px"
       />
+      <Text
+        fontFamily="'Pirata One', serif"
+        fontSize="3xl"
+        color="orange.400"
+        textShadow="2px 2px 4px rgba(0,0,0,0.8)"
+        fontStyle="oblique"
+      >
+        Dragon's Den
+      </Text>
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>
